@@ -1,8 +1,6 @@
-
-
 @component($typeForm, get_defined_vars())
-    <link rel="stylesheet" href="/css/tom-select.default.css">
-    <div data-controller="live_select" >
+    <link rel="stylesheet" href="/css/app.css">
+    <div data-controller="demo_select" >
         <select
         id="{{$id}}"
         placeholder="{{$placeholder}}"
@@ -14,6 +12,7 @@
         data-select-searchField="{{$searchField}}"
         data-select-minToSearch="{{$minToSearch}}"
         data-select-remoteUrl="{{$remoteUrl}}"
+        required="{{$required}}"
         ></select>
 
 

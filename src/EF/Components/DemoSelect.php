@@ -21,6 +21,7 @@ class DemoSelect extends Field
         'remoteUrl' => '',
         'minToSearch' => 5,
         'debounce' => 500,
+        'required' => false
 
     ];
 
@@ -48,7 +49,7 @@ class DemoSelect extends Field
 
         $this->set('id', $id);
 
-        return view('ef::live_select',array_merge($this->getAttributes(), [
+        return view('ef::demo_select',array_merge($this->getAttributes(), [
             'attributes'     => $this->getAllowAttributes(),
             'id'             => $id,
             'oldName'        => $this->getOldName(),

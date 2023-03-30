@@ -10,7 +10,7 @@ class EfServiceProvider extends ServiceProvider
     public function boot(Dashboard $ds)
     {
         $ds->registerResource('scripts','/js/app.js');
-        $ds->registerResource('stylesheets','/css/tom-select.default.css');
+        $ds->registerResource('stylesheets','/css/app.css');
         $this->loadViewsFrom(__DIR__ . '/../../../resources/views', 'ef');
     }
     
