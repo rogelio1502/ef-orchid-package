@@ -28,10 +28,11 @@ class LiveSelect extends Field
         'isOptionList' => false,
         'title' => 'Live Select',
         'placeholder' => 'Select an option...',
-        'url' => 'https://api.github.com/search/repositories?q=',
+        'url' => 'https://api.github.com/search/repositories',
         'limit' => 10,
         'vals' => [],
-        'required' => false
+        'required' => false,
+        'includeCsrfToken' => false,
     ];
 
 
@@ -55,7 +56,7 @@ class LiveSelect extends Field
             ->translate()
             ->checkError();
 
-        return view('live_select',array_merge($this->getAttributes(), [
+        return view('ef::live_select',array_merge($this->getAttributes(), [
             'id' => $this->getAttributes()['name'],
             'required' => $this->getAttributes()['required'] ? 'required' : '',
             'attributes'     => $this->getAllowAttributes(),

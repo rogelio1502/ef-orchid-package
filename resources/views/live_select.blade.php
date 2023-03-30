@@ -18,6 +18,7 @@ data-controller="live-select-controller"
                 name="{{$name}}"
                 placeholder="{{$placeholder}}"
                 required="{{$required}}"
+                data-include-csrf-token="{{$includeCsrfToken}}"
                 >
                 @foreach ($vals as $val)
                     <option value="{{$val['value']}}" selected>{{$val['text']}}</option>

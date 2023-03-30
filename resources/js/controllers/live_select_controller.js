@@ -15,6 +15,9 @@ export default class extends window.Controller {
             encodeURIComponent(query) +
             '&limit=' +
             select.getAttribute('data-limit') ?? 10
+        if (!select.getAttribute('data-include-csrf-token')) {
+          delete window.axios.defaults.headers.common['X-CSRF-TOKEN']
+        }
         window.axios
           .get(url)
           .then(response => {
