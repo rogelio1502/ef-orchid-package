@@ -1,0 +1,30 @@
+{
+  "name": "rogelio1502/orchid-package-demo",
+  "description": "Orchid Package Demo",
+  "type": "library",
+  "require": {
+    "php": ">=8.0",
+    "orchid/platform": "^13.9"
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Rogelio Torres Pasillas",
+      "email": "rogelio15021515@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "EF\\Components\\": "src/EF/Components/",
+      "EF\\Providers\\": "src/EF/Providers/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "EF\\Providers\\EfServiceProvider"
+      ]
+    }
+  }
+}
