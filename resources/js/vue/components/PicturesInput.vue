@@ -1,0 +1,86 @@
+<template>
+  <div class="bg-white rounded shadow-sm p-4 py-4 d-flex flex-column">
+    <label class="form-label">Agregar imagen</label>
+    <input
+      class="form-control"
+      :name="name"
+      type="file"
+      accept="image/*"
+      @input="imgPicked"
+      multiple
+      ref="input"
+    />
+    <div class="mt-2 d-flex pictures-preview">
+      <div v-for="imgS in imgSelected" class="pp-img-div" :key="imgS.name">
+        <img class="img-thumbnail" :src="imgS.src" alt="" srcset="" />
+        <span @click="removePreview(imgS.name)" class="trash">
+          <i class="fa fa-trash-o"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  props: {
+    name: String,
+  },
+  data() {
+    return {
+      imgSelected: [],
+    };
+  },
+  methods: {
+    imgPicked(e) {
+      this.imgSelected = [];
+      e.srcElement.files.forEach((file) => {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          this.imgSelected.push({ name: file.name, src: reader.result });
+        };
+      });
+    },
+    removePreview(fileName) {
+      this.imgSelected = this.imgSelected.filter((img) => img.name != fileName);
+      const dt = new DataTransfer();
+      for (let file of this.$refs.input.files) {
+        if (file.name !== fileName) {
+          dt.items.add(file);
+        }
+      }
+      this.$refs.input.files = dt.files;
+    },
+  },
+};
+</script>
+
+<style scoped>
+.pictures-preview {
+  overflow: scroll;
+}
+.img-thumbnail {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+}
+.pp-img-div {
+  position: relative;
+}
+.pp-img-div:hover .trash {
+  display: block;
+}
+.trash {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+  background-color: red;
+  padding: 5px;
+}
+.trash i {
+  color: white;
+}
+</style>
