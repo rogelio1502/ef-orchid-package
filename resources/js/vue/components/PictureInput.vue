@@ -1,6 +1,10 @@
 <template>
-  <div class="bg-white rounded shadow-sm p-4 py-4 d-flex flex-column">
-    <label class="form-label">Agregar imagen</label>
+  <div class="form-group d-flex flex-column">
+    <label class="form-label"
+      >{{ title ?? "Agregar Imagen" }}
+      <sup v-show="isrequired != ''" class="text-danger">*</sup>
+    </label>
+
     <input
       class="form-control"
       :name="name"
@@ -9,10 +13,12 @@
       @input="imgPicked"
       multiple
       ref="input"
+      :required="isrequired != '' ? true : false"
     />
+
     <div class="mt-2 d-flex pictures-preview">
       <div v-for="imgS in imgSelected" class="pp-img-div" :key="imgS.name">
-        <img class="img-thumbnail" :src="imgS.src" alt="" srcset="" />
+        <img class="img-thumbnail-0" :src="imgS.src" alt="" srcset="" />
         <span @click="removePreview(imgS.name)" class="trash">
           <i class="fa fa-trash-o"></i>
         </span>
@@ -24,12 +30,16 @@
 export default {
   props: {
     name: String,
+    isrequired: String,
+    title: String,
   },
+
   data() {
     return {
       imgSelected: [],
     };
   },
+
   methods: {
     imgPicked(e) {
       this.imgSelected = [];
@@ -58,8 +68,9 @@ export default {
 <style scoped>
 .pictures-preview {
   overflow: scroll;
+  width: 100%;
 }
-.img-thumbnail {
+.img-thumbnail-0 {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
