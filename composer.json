@@ -1,7 +1,6 @@
 {
   "name": "rogelio1502/ef-orchid-package",
   "description": "EF Orchid Package",
-  "version": "1.0.5",
   "type": "library",
   "require": {
     "php": ">=8.0",
@@ -27,15 +26,5 @@
         "EF\\Providers\\EfServiceProvider"
       ]
     }
-  },
-  "post-update-cmd": [
-    "php artisan clear-compiled",
-    "php artisan optimize",
-    "npx mix"
-  ],
-  "post-install-cmd": [
-    "php artisan clear-compiled",
-    "php artisan optimize",
-    "npx mix"
-  ]
+  }
 }

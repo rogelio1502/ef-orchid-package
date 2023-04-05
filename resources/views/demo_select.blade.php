@@ -1,5 +1,5 @@
 @component($typeForm, get_defined_vars())
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/ef/css/ef-orchid-package.css">
     <div data-controller="demo_select" >
         <select
         id="{{$id}}"
