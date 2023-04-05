@@ -1,7 +1,7 @@
 {
   "name": "rogelio1502/ef-orchid-package",
   "description": "EF Orchid Package",
-  "version": "1.0.5",
+  "version": "1.0.52",
   "type": "library",
   "require": {
     "php": ">=8.0",
