@@ -1,7 +1,7 @@
 
 
 @isset($title)
-    <li class="nav-item mt-3 mb-1">
+    <li class="nav-item mt-3 mb-1 nav-title">
         <small class="text-muted ms-4 w-100 user-select-none">{{ __($title) }}</small>
 
     </li>

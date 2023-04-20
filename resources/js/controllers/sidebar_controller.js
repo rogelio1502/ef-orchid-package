@@ -10,6 +10,7 @@ export default class extends window.Controller {
     let openWithClick = document.querySelectorAll('.open-with-click')
     let menuParentOptions = document.querySelectorAll('[id^="parent-"]')
     let profileDiv = document.querySelector('#headerMenuCollapse > div')
+    let navTitle = document.querySelectorAll('.nav-title')
 
     function toggleProfileDropdown (resize = false) {
       if (!resize) {
@@ -75,6 +76,7 @@ export default class extends window.Controller {
         removeClassFromElements(mustBeCenter, 'justify-content-center')
         removeClassFromElements(menuOptions, 'justify-content-center')
         removeClassFromElements(subMenu, 'd-none')
+        removeClassFromElements(navTitle, 'd-none')
       } else {
         removeClassFromElements(subMenu, 'show')
 
@@ -90,6 +92,7 @@ export default class extends window.Controller {
           removeClassFromElements(menuParentOptions, 'border-bottom')
           removeClassFromElements(menuParentOptions, 'border-white')
           removeClassFromElements(menuParentOptions, 'pt-1')
+          removeClassFromElements(navTitle, 'd-none')
         } else {
           toggleProfileDropdown(true)
           sideBar.classList.add('p-0')
@@ -105,6 +108,7 @@ export default class extends window.Controller {
           addClassToElements(menuParentOptions, 'border-bottom')
           addClassToElements(menuParentOptions, 'border-white')
           addClassToElements(menuParentOptions, 'pt-1')
+          addClassToElements(navTitle, 'd-none')
         }
       }
     }
@@ -127,6 +131,7 @@ export default class extends window.Controller {
       toggleToElements(menuParentOptions, 'border-bottom')
       toggleToElements(menuParentOptions, 'border-white')
       toggleToElements(menuParentOptions, 'pt-1')
+      toggleToElements(navTitle, 'd-none')
 
       removeClassFromElements(subMenu, 'show')
     }
