@@ -1,2 +1,9 @@
-@import "tom-select.default.css"; /* Using a string */
-@import "basic-loader.css";
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@import url("./colors.css");
+@import url("./sidebar.css");
+@import url("./buttons.css");
+@import url("tom-select.default.css"); /* Using a string */
+@import url("basic-loader.css");

@@ -1,0 +1,43 @@
+.width-collapse {
+    width: 7rem;
+    /* transition: 1s width ease; */
+}
+
+.bg-dark {
+    background-color: #272531 !important;
+}
+
+.sidebar-tier {
+    width: 4rem;
+}
+.must-be-hide {
+    /* transition: width 0.5s  ease-in; */
+    transition: all 0.34s;
+}
+
+/* .show {
+    transition: cubic-bezier(0.47, 0, 0.75, 0.72) 0.55s all !important;
+} */
+
+#openCloseDiv {
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    #right-side {
+        padding: 0px;
+    }
+    #mySidebar {
+        transition: ease-in-out 0.35s width;
+    }
+}
+@media (max-width: 768px) {
+    #openCloseDiv {
+        display: none;
+    }
+}
+@media (width: 768px) {
+    #openCloseDiv {
+        display: block;
+    }
+}
