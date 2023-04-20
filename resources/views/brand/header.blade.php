@@ -12,7 +12,7 @@
 
     <p class="my-0 must-be-hide d-none" style="margin-left: 10px">
         <span class="d-none d-sm-block">
-            {{env('APP_ENV')}}
+            {{env('APP_NAME')}}
         </span>
     </p>
 
