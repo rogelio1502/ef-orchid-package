@@ -1,6 +1,6 @@
 <p class="small m-n text-white must-be-hide d-none overflow-scroll">
     © Copyright {{date('Y')}}
-    <a href="{{ env('APP_STORE_URL') }}" target="_blank"> {{env('APP_NAME')}} </a>
+    <a href="{{ env('ECOMMERCE_URL') }}" target="_blank"> {{env('ECOMMERCE_NAME')}} </a>
     @if (env('APP_URL') != env('APP_PROD_URL'))
         <br>
 
