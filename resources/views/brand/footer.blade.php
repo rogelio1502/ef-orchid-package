@@ -5,7 +5,7 @@
     @if ($_SERVER['SERVER_NAME'] != env('APP_PROD_URL'))
         <br>
 
-        <span>URL: <b>{{ $_SERVER['SERVER_NAME'] }}</b> </span>
+        <span>Server: <b>{{ $_SERVER['SERVER_NAME'] }}</b> </span>
         <br>
         <span>Environment: <b>{{ env('APP_ENV') }}</b> </span>
         <br>
