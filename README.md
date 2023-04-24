@@ -1,7 +1,5 @@
 ## ef-orchid-package
 
-#### Add in your project
-
 ---
 
 Follow below instructions to setup the package in your laravel project:
